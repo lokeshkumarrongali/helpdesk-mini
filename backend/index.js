@@ -15,11 +15,16 @@ const app = express();
 // Debugging
 console.log('Loaded MONGODB_URI:', process.env.MONGODB_URI);
 
-// Middleware
+// ✅ CORS Setup (local + deployed frontend)
 app.use(cors({
-  origin: 'http://localhost:5173', // frontend port
-  credentials: true
+  origin: [
+    'http://localhost:5173',                       // local dev
+    'https://helpdesk-mini-frontend.onrender.com'  // deployed frontend (replace if different)
+  ],
+  credentials: true,
 }));
+
+// Middleware
 app.use(express.json());
 app.use(rateLimit); // Apply rate limiter globally BEFORE routes
 
