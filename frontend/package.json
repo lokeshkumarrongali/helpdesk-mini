@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-     "postinstall": "npm install vite",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
